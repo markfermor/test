@@ -49,6 +49,7 @@ class MySQL extends MySQLi{
 
 	function insert($table,$fields,$values){
 		if (trim($table) && is_array($fields) && is_array($values)){
+				echo "got here";
 			$insertPair = Array();
 			if(is_array($fields)){
 				while(list($key,$value)=each($fields)){
@@ -59,7 +60,7 @@ class MySQL extends MySQLi{
 			}
 			if(count($insertPair) > 0){
 				$query = ("INSERT INTO ".$this->real_escape_string($table)." SET ".implode(",",$insertPair));
-				#echo "$query\n";
+				//echo "query="."$query\n";
 				$this->execute($query);
 				if($this->errno){
 					throw new MySQLInsertException($this->errno." - ".$this->error."\n\t$query");
