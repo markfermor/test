@@ -1,6 +1,6 @@
 <?php
 
-require_once("/Exceptions.php");
+require_once(dirname(__FILE__)."/Exceptions.php");
 
 class MySQL extends MySQLi{
 	
