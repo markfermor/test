@@ -10,7 +10,7 @@
 		$conn = new MySQL('127.0.0.1','peoplecolour','root','ilovetocode');
 
 		// Get Rows
-		$query = 'select * from people';
+		$query = 'select firstname,lastname,email,dob,fav_colours from people';
 		$rows = $conn->getRows($query);
 		/**
 		print "<pre>";
